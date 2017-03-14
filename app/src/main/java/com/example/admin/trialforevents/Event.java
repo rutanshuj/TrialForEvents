@@ -1,29 +1,27 @@
 package com.example.admin.trialforevents;
 
 
-import android.os.Parcelable;
-
 public class Event  {
 
     private String title, desc, location, category, price, imageUrl;
 
-    private String from_date, to_date, from_time, to_time,  fbLink, webLink, contact, club;
+    private String start_date, end_date, start_time, end_time, fblink, weblink, contact, club;
 
     public Event(String title, String desc, String location, String category, String price,
-                 String imageUrl, String from_date, String to_date, String from_time, String to_time,
-                 String fbLink, String webLink, String contact, String club) {
+                 String imageUrl, String start_date, String end_date, String start_time, String end_time,
+                 String fblink, String weblink, String contact, String club) {
         this.title = title;
         this.desc = desc;
         this.location = location;
         this.category = category;
         this.price = price;
         this.imageUrl = imageUrl;
-        this.from_date = from_date;
-        this.to_date = to_date;
-        this.from_time = from_time;
-        this.to_time = to_time;
-        this.fbLink = fbLink;
-        this.webLink = webLink;
+        this.start_date = start_date;
+        this.end_date = end_date;
+        this.start_time = start_time;
+        this.end_time = end_time;
+        this.fblink = fblink;
+        this.weblink = weblink;
         this.contact = contact;
         this.club = club;
     }
@@ -34,6 +32,7 @@ public class Event  {
     public String getTitle() {
         return title;
     }
+
     public void setTitle(String title) {
         this.title = title;
     }
@@ -78,52 +77,52 @@ public class Event  {
         this.imageUrl = imageUrl;
     }
 
-    public String getFrom_date() {
-        return from_date;
+    public String getStart_date() {
+        return start_date;
     }
 
-    public void setFrom_date(String from_date) {
-        this.from_date = from_date;
+    public void setStart_date(String start_date) {
+        this.start_date = start_date;
     }
 
-    public String getTo_date() {
-        return to_date;
+    public String getEnd_date() {
+        return end_date;
     }
 
-    public void setTo_date(String to_date) {
-        this.to_date = to_date;
+    public void setEnd_date(String end_date) {
+        this.end_date = end_date;
     }
 
-    public String getFrom_time() {
-        return from_time;
+    public String getStart_time() {
+        return start_time;
     }
 
-    public void setFrom_time(String from_time) {
-        this.from_time = from_time;
+    public void setStart_time(String start_time) {
+        this.start_time = start_time;
     }
 
-    public String getTo_time() {
-        return to_time;
+    public String getEnd_time() {
+        return end_time;
     }
 
-    public void setTo_time(String to_time) {
-        this.to_time = to_time;
+    public void setEnd_time(String end_time) {
+        this.end_time = end_time;
     }
 
-    public String getFbLink() {
-        return fbLink;
+    public String getFblink() {
+        return fblink;
     }
 
-    public void setFbLink(String fbLink) {
-        this.fbLink = fbLink;
+    public void setFblink(String fblink) {
+        this.fblink = fblink;
     }
 
-    public String getWebLink() {
-        return webLink;
+    public String getWeblink() {
+        return weblink;
     }
 
-    public void setWebLink(String webLink) {
-        this.webLink = webLink;
+    public void setWeblink(String weblink) {
+        this.weblink = weblink;
     }
 
     public String getContact() {

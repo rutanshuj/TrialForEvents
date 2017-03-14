@@ -6,22 +6,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
-import com.thoughtbot.expandablerecyclerview.ExpandableRecyclerViewAdapter;
-import com.thoughtbot.expandablerecyclerview.models.ExpandableGroup;
-import com.thoughtbot.expandablerecyclerview.viewholders.ChildViewHolder;
-import com.thoughtbot.expandablerecyclerview.viewholders.GroupViewHolder;
-
-import java.net.URL;
-import java.util.List;
 
 public class RecyclerView extends AppCompatActivity {
 
@@ -61,19 +52,44 @@ public class RecyclerView extends AppCompatActivity {
             @Override
             protected void populateViewHolder(EventView.RequestViewHolder viewHolder, Event model, int position) {
                 viewHolder.setTitle(model.getTitle());
-
                 viewHolder.setCategory(model.getCategory());
                 viewHolder.setLocation(model.getLocation());
                 viewHolder.setPrice(model.getPrice());
+                viewHolder.setImageUrl(getApplicationContext(), model.getImageUrl());
+
                 final String desc = model.getDesc();
                 final String imageurl = model.getImageUrl();
-                viewHolder.setImageUrl(getApplicationContext(), model.getImageUrl());
+                final String start_date = model.getStart_date();
+                final String end_date = model.getEnd_date();
+                final String start_time = model.getStart_time();
+                final String end_time = model.getEnd_time();
+                final String club = model.getClub();
+                final String category = model.getCategory();
+                final String price = model.getPrice();
+                final String title = model.getTitle();
+                final String location = model.getLocation();
+                final String fblink = model.getFblink();
+                final String weblink = model.getWeblink();
+                final String contact = model.getContact();
+
                 viewHolder.imageButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         Intent intent = new Intent(RecyclerView.this, EventDetails.class);
+                        intent.putExtra("title", title);
                         intent.putExtra("desc", desc);
                         intent.putExtra("imageUrl", imageurl);
+                        intent.putExtra("start_date", start_date);
+                        intent.putExtra("end_date", end_date);
+                        intent.putExtra("start_time", start_time);
+                        intent.putExtra("end_time", end_time);
+                        intent.putExtra("club", club);
+                        intent.putExtra("category", category);
+                        intent.putExtra("price", price);
+                        intent.putExtra("location", location);
+                        intent.putExtra("fblink", fblink);
+                        intent.putExtra("weblink", weblink);
+                        intent.putExtra("contact", contact);
                         startActivity(intent);
                     }
                 });

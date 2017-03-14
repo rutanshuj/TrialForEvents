@@ -49,7 +49,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/request_club"
+        android:id="@+id/request_club_d"
         android:text="Club"
         android:layout_alignBaseline="@+id/request_category_d"
         android:layout_alignBottom="@+id/request_category_d"
@@ -68,42 +68,42 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/to_time"
+        android:id="@+id/end_time"
         android:text="To Time"
         android:layout_marginTop="13dp"
-        android:layout_below="@+id/from_date"
-        android:layout_alignRight="@+id/to_date"
-        android:layout_alignEnd="@+id/to_date" />
+        android:layout_below="@+id/start_date"
+        android:layout_alignRight="@+id/end_date"
+        android:layout_alignEnd="@+id/end_date" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/to_date"
+        android:id="@+id/end_date"
         android:text="To Date"
         android:layout_below="@+id/request_price"
-        android:layout_alignLeft="@+id/request_club"
-        android:layout_alignStart="@+id/request_club"
+        android:layout_alignLeft="@+id/request_club_d"
+        android:layout_alignStart="@+id/request_club_d"
         android:layout_marginTop="18dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/from_date"
+        android:id="@+id/start_date"
         android:text="From Date"
-        android:layout_alignBaseline="@+id/to_date"
-        android:layout_alignBottom="@+id/to_date"
+        android:layout_alignBaseline="@+id/end_date"
+        android:layout_alignBottom="@+id/end_date"
         android:layout_alignLeft="@+id/request_price"
         android:layout_alignStart="@+id/request_price" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/from_time"
+        android:id="@+id/start_time"
         android:text="From Time"
-        android:layout_alignBaseline="@+id/to_time"
-        android:layout_alignBottom="@+id/to_time"
-        android:layout_alignLeft="@+id/from_date"
-        android:layout_alignStart="@+id/from_date" />
+        android:layout_alignBaseline="@+id/end_time"
+        android:layout_alignBottom="@+id/end_time"
+        android:layout_alignLeft="@+id/start_date"
+        android:layout_alignStart="@+id/start_date" />
 
     <ImageView
         android:elevation="5dp"
