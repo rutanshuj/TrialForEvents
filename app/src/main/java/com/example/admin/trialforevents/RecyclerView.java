@@ -1,10 +1,12 @@
 package com.example.admin.trialforevents;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -13,6 +15,13 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
+import com.thoughtbot.expandablerecyclerview.ExpandableRecyclerViewAdapter;
+import com.thoughtbot.expandablerecyclerview.models.ExpandableGroup;
+import com.thoughtbot.expandablerecyclerview.viewholders.ChildViewHolder;
+import com.thoughtbot.expandablerecyclerview.viewholders.GroupViewHolder;
+
+import java.net.URL;
+import java.util.List;
 
 public class RecyclerView extends AppCompatActivity {
 
@@ -42,7 +51,6 @@ public class RecyclerView extends AppCompatActivity {
 
     @Override
     protected void onStart() {
-        final String event_cat  = getIntent().getStringExtra("Category");
         super.onStart();
         FirebaseRecyclerAdapter<Event, EventView.RequestViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Event, EventView.RequestViewHolder>(
                 Event.class,
@@ -53,15 +61,20 @@ public class RecyclerView extends AppCompatActivity {
             @Override
             protected void populateViewHolder(EventView.RequestViewHolder viewHolder, Event model, int position) {
                 viewHolder.setTitle(model.getTitle());
-                viewHolder.setDesc(model.getDesc());
+
                 viewHolder.setCategory(model.getCategory());
                 viewHolder.setLocation(model.getLocation());
                 viewHolder.setPrice(model.getPrice());
+                final String desc = model.getDesc();
+                final String imageurl = model.getImageUrl();
                 viewHolder.setImageUrl(getApplicationContext(), model.getImageUrl());
                 viewHolder.imageButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(RecyclerView.this, "Image Selected", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(RecyclerView.this, EventDetails.class);
+                        intent.putExtra("desc", desc);
+                        intent.putExtra("imageUrl", imageurl);
+                        startActivity(intent);
                     }
                 });
             }
@@ -83,11 +96,6 @@ public class RecyclerView extends AppCompatActivity {
         public void setTitle(String title) {
             TextView a_title = (TextView) mView.findViewById(R.id.request_title);
             a_title.setText(title);
-        }
-
-        public void setDesc(String desc) {
-            TextView a_desc = (TextView) mView.findViewById(R.id.request_desc);
-            a_desc.setText(desc);
         }
 
         public void setLocation(String location) {

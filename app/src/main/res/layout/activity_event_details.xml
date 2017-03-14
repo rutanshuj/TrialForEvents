@@ -4,10 +4,116 @@
     android:id="@+id/activity_event_details"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.admin.trialforevents.EventDetails">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Location"
+        android:id="@+id/request_location"
+        android:layout_below="@+id/request_category_d"
+        android:layout_alignLeft="@+id/request_category_d"
+        android:layout_alignStart="@+id/request_category_d" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Desc will come here"
+        android:textStyle="bold"
+        android:layout_marginTop="32dp"
+        android:id="@+id/request_desc"
+        android:layout_below="@+id/eventImage_detailsPage" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/request_title_d"
+        android:text="Title will come here"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/eventImage_detailsPage"
+        android:layout_toEndOf="@+id/eventImage_detailsPage"
+        android:layout_marginLeft="11dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="23dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/request_category_d"
+        android:text="Category"
+        android:layout_marginTop="19dp"
+        android:layout_below="@+id/request_title_d"
+        android:layout_alignLeft="@+id/request_title_d"
+        android:layout_alignStart="@+id/request_title_d" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/request_club"
+        android:text="Club"
+        android:layout_alignBaseline="@+id/request_category_d"
+        android:layout_alignBottom="@+id/request_category_d"
+        android:layout_alignRight="@+id/request_title_d"
+        android:layout_alignEnd="@+id/request_title_d" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Price"
+        android:id="@+id/request_price"
+        android:layout_alignLeft="@+id/request_location"
+        android:layout_alignStart="@+id/request_location"
+        android:layout_below="@+id/request_location" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/to_time"
+        android:text="To Time"
+        android:layout_marginTop="13dp"
+        android:layout_below="@+id/from_date"
+        android:layout_alignRight="@+id/to_date"
+        android:layout_alignEnd="@+id/to_date" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/to_date"
+        android:text="To Date"
+        android:layout_below="@+id/request_price"
+        android:layout_alignLeft="@+id/request_club"
+        android:layout_alignStart="@+id/request_club"
+        android:layout_marginTop="18dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/from_date"
+        android:text="From Date"
+        android:layout_alignBaseline="@+id/to_date"
+        android:layout_alignBottom="@+id/to_date"
+        android:layout_alignLeft="@+id/request_price"
+        android:layout_alignStart="@+id/request_price" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/from_time"
+        android:text="From Time"
+        android:layout_alignBaseline="@+id/to_time"
+        android:layout_alignBottom="@+id/to_time"
+        android:layout_alignLeft="@+id/from_date"
+        android:layout_alignStart="@+id/from_date" />
+
+    <ImageView
+        android:elevation="5dp"
+        android:adjustViewBounds="true"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:scaleType="fitXY"
+        android:id="@+id/eventImage_detailsPage"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>
