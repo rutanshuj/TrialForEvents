@@ -27,7 +27,6 @@ public class MainPage extends AppCompatActivity implements View.OnClickListener 
     }
 
     public void onClick(View view){
-        Toast.makeText(this, "Button Selected !", Toast.LENGTH_SHORT).show();
         Intent i = new Intent(getApplicationContext(), EventView.class);
 
         switch(view.getId()){

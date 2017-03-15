@@ -4,6 +4,7 @@ import android.content.Intent;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -16,7 +17,7 @@ public class EventDetails extends AppCompatActivity {
     TextView title1, desc1, location1, category1, price1,
             start_date1, end_date1, start_time1, end_time1, fblink1, weblink1, contact1, club1;
 
-
+    CardView  cardView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +35,10 @@ public class EventDetails extends AppCompatActivity {
         start_time1 = (TextView) findViewById(R.id.start_time);
         end_time1 = (TextView) findViewById(R.id.end_time);
         club1 = (TextView) findViewById(R.id.request_club_d);
-
+        cardView = (CardView) findViewById(R.id.cardViewLast);
+        contact1 = (TextView) findViewById(R.id.request_contact);
+        weblink1 = (TextView) findViewById(R.id.request_weblink);
+        fblink1 = (TextView) findViewById(R.id.request_fblink);
 
         Intent intent = getIntent();
         final String desc = intent.getStringExtra("desc");
@@ -52,23 +56,23 @@ public class EventDetails extends AppCompatActivity {
         final String weblink = intent.getStringExtra("weblink");
         final String contact = intent.getStringExtra("contact");
 
-        Log.d(club, "Club");
-        Log.d(start_date, "StartDate");
-        Log.d(end_date, "EndDate");
-        Log.d(start_time, "StartTime");
-        Log.d(end_time, "EndTime");
-        Log.d(title, "Title:");
+        final String clubConcat = "by " + club;
 
         desc1.setText(desc);
         title1.setText(title);
         location1.setText(location);
         category1.setText(category);
         price1.setText(price);
-        club1.setText(club);
+        club1.setText(clubConcat);
         start_date1.setText(start_date);
         end_date1.setText(end_date);
         start_time1.setText(start_time);
         end_time1.setText(end_time);
+        contact1.setText(contact);
+        fblink1.setText(fblink);
+        weblink1.setText(weblink);
+
+        cardView.setCardElevation(0);
 
         Picasso.with(getApplicationContext()).load(imageUrl).into(eventImage);
     }

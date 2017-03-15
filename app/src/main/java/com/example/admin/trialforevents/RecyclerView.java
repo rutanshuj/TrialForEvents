@@ -42,6 +42,7 @@ public class RecyclerView extends AppCompatActivity {
 
     @Override
     protected void onStart() {
+
         super.onStart();
         FirebaseRecyclerAdapter<Event, EventView.RequestViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Event, EventView.RequestViewHolder>(
                 Event.class,

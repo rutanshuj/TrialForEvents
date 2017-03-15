@@ -1,33 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/activity_event_details"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="4dp"
+    android:background="#ffffff"
     tools:context="com.example.admin.trialforevents.EventDetails">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Location"
-        android:id="@+id/request_location"
-        android:layout_below="@+id/request_category_d"
-        android:layout_alignLeft="@+id/request_category_d"
-        android:layout_alignStart="@+id/request_category_d" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Desc will come here"
-        android:textStyle="bold"
-        android:layout_marginTop="32dp"
-        android:id="@+id/request_desc"
-        android:layout_below="@+id/eventImage_detailsPage" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/request_title_d"
+        android:textSize="17sp"
+        android:textColor="#000000"
         android:text="Title will come here"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/eventImage_detailsPage"
@@ -35,65 +22,6 @@
         android:layout_marginLeft="11dp"
         android:layout_marginStart="11dp"
         android:layout_marginTop="23dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/request_category_d"
-        android:text="Category"
-        android:layout_marginTop="19dp"
-        android:layout_below="@+id/request_title_d"
-        android:layout_alignLeft="@+id/request_title_d"
-        android:layout_alignStart="@+id/request_title_d" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/request_club_d"
-        android:text="Club"
-        android:layout_alignBaseline="@+id/request_category_d"
-        android:layout_alignBottom="@+id/request_category_d"
-        android:layout_alignRight="@+id/request_title_d"
-        android:layout_alignEnd="@+id/request_title_d" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Price"
-        android:id="@+id/request_price"
-        android:layout_alignLeft="@+id/request_location"
-        android:layout_alignStart="@+id/request_location"
-        android:layout_below="@+id/request_location" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/end_time"
-        android:text="To Time"
-        android:layout_marginTop="13dp"
-        android:layout_below="@+id/start_date"
-        android:layout_alignRight="@+id/end_date"
-        android:layout_alignEnd="@+id/end_date" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/end_date"
-        android:text="To Date"
-        android:layout_below="@+id/request_price"
-        android:layout_alignLeft="@+id/request_club_d"
-        android:layout_alignStart="@+id/request_club_d"
-        android:layout_marginTop="18dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/start_date"
-        android:text="From Date"
-        android:layout_alignBaseline="@+id/end_date"
-        android:layout_alignBottom="@+id/end_date"
-        android:layout_alignLeft="@+id/request_price"
-        android:layout_alignStart="@+id/request_price" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -113,7 +41,138 @@
         android:scaleType="fitXY"
         android:id="@+id/eventImage_detailsPage"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/end_time"
+        android:text="To Time"
+        android:layout_alignBottom="@+id/eventImage_detailsPage"
+        android:layout_alignEnd="@+id/end_date" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/start_date"
+        android:text="From Date"
+        android:layout_above="@+id/start_time"
+        android:layout_alignStart="@+id/request_price" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="From:"
+        android:textStyle="bold"
+        android:layout_above="@+id/start_date"
+        android:layout_alignStart="@+id/start_date" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/end_date"
+        android:text="To Date"
+        android:layout_above="@+id/end_time"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="To:"
+        android:layout_above="@+id/end_date"
+        android:layout_alignStart="@+id/end_date" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Location"
+        android:id="@+id/request_location"
+        android:layout_below="@+id/request_club_d"
+        android:layout_alignStart="@+id/request_club_d"
+        android:layout_marginTop="11dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/request_club_d"
+        android:text="Club"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/request_title_d"
+        android:layout_alignStart="@+id/request_title_d" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Price"
+        android:textStyle="bold"
+        android:id="@+id/request_price"
+        android:layout_below="@+id/request_location"
+        android:layout_alignStart="@+id/request_location"
+        android:layout_marginTop="14dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/request_category_d"
+        android:text="Category"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimary"
+        android:layout_above="@+id/request_price"
+        android:layout_alignParentEnd="true" />
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/start_time"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="18dp"
+        android:id="@+id/cardView">
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:id="@+id/request_desc"
+          android:text="Desc will come here"
+          android:textColor="#000000"/>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="33dp"
+        android:id="@+id/cardViewLast"
+        android:layout_below="@+id/cardView"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="contact number"
+            android:id="@+id/request_contact"
+             android:padding="3dp"/>
+
+            <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="weblink "
+                android:padding="3dp"
+            android:id="@+id/request_weblink"
+            android:layout_marginTop="19dp" />
+
+            <TextView
+                android:padding="3dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="fbLink"
+                android:id="@+id/request_fblink"
+                android:layout_marginTop="17dp"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
 </RelativeLayout>

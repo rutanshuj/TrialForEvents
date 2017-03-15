@@ -41,7 +41,6 @@ public class EventView extends AppCompatActivity{
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
     }
-
     @Override
     protected void onStart() {
         final String event_cat  = getIntent().getStringExtra("Category");
@@ -55,15 +54,43 @@ public class EventView extends AppCompatActivity{
             @Override
             protected void populateViewHolder(RequestViewHolder viewHolder, Event model, int position) {
                     viewHolder.setTitle(model.getTitle());
-                    viewHolder.setDesc(model.getDesc());
                     viewHolder.setCategory(model.getCategory());
                     viewHolder.setLocation(model.getLocation());
                     viewHolder.setPrice(model.getPrice());
                     viewHolder.setImageUrl(getApplicationContext(), model.getImageUrl());
+                final String desc = model.getDesc();
+                final String imageurl = model.getImageUrl();
+                final String start_date = model.getStart_date();
+                final String end_date = model.getEnd_date();
+                final String start_time = model.getStart_time();
+                final String end_time = model.getEnd_time();
+                final String club = model.getClub();
+                final String category = model.getCategory();
+                final String price = model.getPrice();
+                final String title = model.getTitle();
+                final String location = model.getLocation();
+                final String fblink = model.getFblink();
+                final String weblink = model.getWeblink();
+                final String contact = model.getContact();
                 viewHolder.imageButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-
+                        Intent intent = new Intent(EventView.this, EventDetails.class);
+                        intent.putExtra("title", title);
+                        intent.putExtra("desc", desc);
+                        intent.putExtra("imageUrl", imageurl);
+                        intent.putExtra("start_date", start_date);
+                        intent.putExtra("end_date", end_date);
+                        intent.putExtra("start_time", start_time);
+                        intent.putExtra("end_time", end_time);
+                        intent.putExtra("club", club);
+                        intent.putExtra("category", category);
+                        intent.putExtra("price", price);
+                        intent.putExtra("location", location);
+                        intent.putExtra("fblink", fblink);
+                        intent.putExtra("weblink", weblink);
+                        intent.putExtra("contact", contact);
+                        startActivity(intent);
                     }
                 });
             }
@@ -85,11 +112,6 @@ public class EventView extends AppCompatActivity{
         public void setTitle(String title) {
             TextView a_title = (TextView) mView.findViewById(R.id.request_title);
             a_title.setText(title);
-        }
-
-        public void setDesc(String desc) {
-            TextView a_desc = (TextView) mView.findViewById(R.id.request_desc);
-            a_desc.setText(desc);
         }
 
         public void setLocation(String location) {
