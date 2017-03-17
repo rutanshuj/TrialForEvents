@@ -23,15 +23,6 @@
         android:layout_marginEnd="53dp" />
 
     <Button
-        android:text="For Event View"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="91dp"
-        android:id="@+id/forEventView"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
-    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/forRecyclerView"
@@ -40,4 +31,22 @@
         android:layout_below="@+id/forDandT"
         android:layout_alignLeft="@+id/forEventView"
         android:layout_alignStart="@+id/forEventView" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="For About Me"
+        android:layout_below="@+id/forRecyclerView"
+        android:layout_alignEnd="@+id/forEventView"
+        android:layout_marginTop="35dp"
+        android:id="@+id/aboutMeBttn" />
+
+    <Button
+        android:text="For Event View"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="47dp"
+        android:id="@+id/forEventView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

@@ -9,39 +9,26 @@
     android:background="#ffffff"
     tools:context="com.example.admin.trialforevents.EventDetails">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/request_title_d"
-        android:textSize="17sp"
-        android:textColor="#000000"
-        android:text="Title will come here"
-        android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/eventImage_detailsPage"
-        android:layout_toEndOf="@+id/eventImage_detailsPage"
-        android:layout_marginLeft="11dp"
-        android:layout_marginStart="11dp"
-        android:layout_marginTop="23dp" />
+        android:background="@color/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        android:id="@+id/toolbarEventDetails"
+        android:layout_alignParentEnd="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/start_time"
         android:text="From Time"
+        android:paddingStart="4dp"
         android:layout_alignBaseline="@+id/end_time"
         android:layout_alignBottom="@+id/end_time"
         android:layout_alignLeft="@+id/start_date"
         android:layout_alignStart="@+id/start_date" />
-
-    <ImageView
-        android:elevation="5dp"
-        android:adjustViewBounds="true"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:scaleType="fitXY"
-        android:id="@+id/eventImage_detailsPage"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -56,6 +43,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/start_date"
         android:text="From Date"
+        android:paddingStart="4dp"
         android:layout_above="@+id/start_time"
         android:layout_alignStart="@+id/request_price" />
 
@@ -63,9 +51,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="From:"
+        android:paddingStart="4dp"
         android:textStyle="bold"
         android:layout_above="@+id/start_date"
-        android:layout_alignStart="@+id/start_date" />
+        android:layout_alignStart="@+id/start_date"
+        android:id="@+id/textView2" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -81,35 +71,53 @@
         android:textStyle="bold"
         android:text="To:"
         android:layout_above="@+id/end_date"
-        android:layout_alignStart="@+id/end_date" />
+        android:layout_alignStart="@+id/end_date"
+        android:id="@+id/textView" />
 
-    <TextView
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/start_time"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="35dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/request_desc"
+            android:text="Desc will come here"
+            android:textColor="#000000"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="15dp"
+            />
+
+        <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Location"
-        android:id="@+id/request_location"
-        android:layout_below="@+id/request_club_d"
-        android:layout_alignStart="@+id/request_club_d"
-        android:layout_marginTop="11dp" />
+        android:text="contact number"
+        android:id="@+id/request_contact"
+         android:padding="5dp"/>
 
-    <TextView
+        <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/request_club_d"
-        android:text="Club"
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/request_title_d"
-        android:layout_alignStart="@+id/request_title_d" />
+        android:text="weblink "
+            android:padding="5dp"
+        android:id="@+id/request_weblink"
+        />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Price"
-        android:textStyle="bold"
-        android:id="@+id/request_price"
-        android:layout_below="@+id/request_location"
-        android:layout_alignStart="@+id/request_location"
-        android:layout_marginTop="14dp" />
+        <TextView
+            android:padding="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="fbLink"
+            android:id="@+id/request_fblink"
+            android:layout_weight="1" />
+
+    </LinearLayout>
 
     <TextView
         android:layout_width="wrap_content"
@@ -118,61 +126,57 @@
         android:text="Category"
         android:textStyle="bold"
         android:textColor="@color/colorPrimary"
-        android:layout_above="@+id/request_price"
+        android:layout_below="@+id/eventImage_detailsPage"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/request_club_d"
+        android:text="Club"
+        android:paddingStart="4dp"
+        android:layout_below="@+id/request_title_d"
+        android:layout_toEndOf="@+id/eventImage_detailsPage" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Location"
+        android:id="@+id/request_location"
+        android:layout_marginTop="39dp"
+        android:layout_below="@+id/request_club_d"
         android:layout_alignParentEnd="true" />
 
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/start_time"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="18dp"
-        android:id="@+id/cardView">
-      <TextView
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:id="@+id/request_desc"
-          android:text="Desc will come here"
-          android:textColor="#000000"/>
-    </android.support.v7.widget.CardView>
+        android:text="Price"
+        android:paddingStart="4dp"
+        android:textStyle="bold"
+        android:id="@+id/request_price"
+        android:layout_alignBaseline="@+id/request_location"
+        android:layout_alignBottom="@+id/request_location"
+        android:layout_toEndOf="@+id/eventImage_detailsPage" />
 
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="33dp"
-        android:id="@+id/cardViewLast"
-        android:layout_below="@+id/cardView"
-        android:layout_alignParentStart="true">
+        android:id="@+id/request_title_d"
+        android:textSize="17sp"
+        android:paddingStart="4dp"
+        android:textColor="#000000"
+        android:text="Title will come here"
+        android:layout_below="@+id/toolbarEventDetails"
+        android:layout_alignEnd="@+id/textView" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="contact number"
-            android:id="@+id/request_contact"
-             android:padding="3dp"/>
+    <ImageView
+        android:elevation="5dp"
+        android:adjustViewBounds="true"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:scaleType="fitXY"
+        android:id="@+id/eventImage_detailsPage"
+        android:layout_below="@+id/toolbarEventDetails"
+        android:layout_toStartOf="@+id/request_title_d" />
 
-            <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="weblink "
-                android:padding="3dp"
-            android:id="@+id/request_weblink"
-            android:layout_marginTop="19dp" />
-
-            <TextView
-                android:padding="3dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="fbLink"
-                android:id="@+id/request_fblink"
-                android:layout_marginTop="17dp"
-                android:layout_weight="1" />
-
-        </LinearLayout>
-
-    </android.support.v7.widget.CardView>
 </RelativeLayout>

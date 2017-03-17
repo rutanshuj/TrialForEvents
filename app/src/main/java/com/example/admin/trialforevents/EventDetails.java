@@ -35,7 +35,7 @@ public class EventDetails extends AppCompatActivity {
         start_time1 = (TextView) findViewById(R.id.start_time);
         end_time1 = (TextView) findViewById(R.id.end_time);
         club1 = (TextView) findViewById(R.id.request_club_d);
-        cardView = (CardView) findViewById(R.id.cardViewLast);
+
         contact1 = (TextView) findViewById(R.id.request_contact);
         weblink1 = (TextView) findViewById(R.id.request_weblink);
         fblink1 = (TextView) findViewById(R.id.request_fblink);
@@ -71,8 +71,6 @@ public class EventDetails extends AppCompatActivity {
         contact1.setText(contact);
         fblink1.setText(fblink);
         weblink1.setText(weblink);
-
-        cardView.setCardElevation(0);
 
         Picasso.with(getApplicationContext()).load(imageUrl).into(eventImage);
     }
