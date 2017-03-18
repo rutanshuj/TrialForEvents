@@ -28,8 +28,10 @@
         <activity
             android:name=".EventDetails"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".MoiFrag"
+        <activity
+            android:name=".MoiFrag"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".GoogleLogin"></activity>
     </application>
 
 </manifest>

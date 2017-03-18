@@ -11,42 +11,49 @@
     tools:context="com.example.admin.trialforevents.MainActivity">
 
     <Button
-        android:text="For Date And Time Pickers"
+        android:text="For Event View"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="43dp"
-        android:id="@+id/forDandT"
-        android:layout_below="@+id/forEventView"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="53dp"
-        android:layout_marginEnd="53dp" />
+        android:layout_marginTop="26dp"
+        android:id="@+id/forEventView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/googleLoginBttnNext"
+        android:text="Google Login Trial"
+        android:layout_marginTop="22dp"
+        android:layout_below="@+id/aboutMeBttn"
+        android:layout_alignStart="@+id/forRecyclerView" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/forRecyclerView"
         android:text="For RecyclerView"
-        android:layout_marginTop="42dp"
+        android:layout_marginTop="29dp"
         android:layout_below="@+id/forDandT"
-        android:layout_alignLeft="@+id/forEventView"
         android:layout_alignStart="@+id/forEventView" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="For About Me"
+        android:layout_marginTop="22dp"
+        android:id="@+id/aboutMeBttn"
         android:layout_below="@+id/forRecyclerView"
-        android:layout_alignEnd="@+id/forEventView"
-        android:layout_marginTop="35dp"
-        android:id="@+id/aboutMeBttn" />
+        android:layout_alignEnd="@+id/forEventView" />
 
     <Button
-        android:text="For Event View"
+        android:text="For Date And Time Pickers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="47dp"
-        android:id="@+id/forEventView"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_marginTop="17dp"
+        android:id="@+id/forDandT"
+        android:layout_marginRight="53dp"
+        android:layout_marginEnd="50dp"
+        android:layout_below="@+id/forEventView"
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>

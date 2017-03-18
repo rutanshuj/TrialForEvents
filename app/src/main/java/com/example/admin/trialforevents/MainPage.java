@@ -20,10 +20,12 @@ public class MainPage extends AppCompatActivity implements View.OnClickListener 
         b3 = (Button) findViewById(R.id.scienceBttn);
         b4 = (Button) findViewById(R.id.financeBttn);
 
+
         b1.setOnClickListener(this);
         b2.setOnClickListener(this);
         b3.setOnClickListener(this);
         b4.setOnClickListener(this);
+
     }
 
     public void onClick(View view){

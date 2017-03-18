@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    Button b1, b2, b3, b4;
+    Button b1, b2, b3, b4, b5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,11 +18,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         b2 = (Button) findViewById(R.id.forDandT);
         b3 = (Button) findViewById(R.id.forRecyclerView);
         b4 = (Button) findViewById(R.id.aboutMeBttn);
+        b5 = (Button) findViewById(R.id.googleLoginBttnNext);
 
         b1.setOnClickListener(this);
         b2.setOnClickListener(this);
         b3.setOnClickListener(this);
         b4.setOnClickListener(this);
+        b5.setOnClickListener(this);
     }
 
 
@@ -33,6 +35,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Intent j = new Intent(MainActivity.this, MainPage.class);
         Intent k = new Intent(MainActivity.this, RecyclerView.class);
         Intent l = new Intent(MainActivity.this, MoiFrag.class);
+        Intent m = new Intent(MainActivity.this, GoogleLogin.class);
 
         switch(v.getId()){
             case R.id.forDandT:
@@ -46,6 +49,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.aboutMeBttn:
                 startActivity(l);
+                break;
+            case R.id.googleLoginBttnNext:
+                startActivity(m);
                 break;
         }
     }
