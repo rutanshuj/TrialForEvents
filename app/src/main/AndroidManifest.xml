@@ -31,7 +31,8 @@
         <activity
             android:name=".MoiFrag"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".GoogleLogin"></activity>
+        <activity android:name=".GoogleLogin" />
+        <activity android:name=".AccountActivity"></activity>
     </application>
 
 </manifest>
